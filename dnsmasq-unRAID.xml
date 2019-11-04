@@ -11,7 +11,23 @@
 
     <Name>dnsmasq</Name>
     <Description>
-        Trying out dnsmasq in Docker.
+        dnsmasq that's easy-ish to configure from the unRAID interface.
+
+        Example use case is getting Minecraft on Nintendo Switch to connect to a self-hosted server.
+        1. Set --server=/hivebedrock.network/123.123.123.123
+           Where 123.123.123.123 is your server's public IP address.  Or local IP if only playing within your network.
+        2. Set the Nintendo Switch's DNS server to an address that'll cause it to use this container as its DNS server.
+           Can be this container's private address if on its network.
+           Could be a public IP address that port-forwards to this container.
+        3. Try to join the "HIVE" featured server; it'll instead join your self-hosted server.
+           At time of writing, the server is called "HIVE-o-ween" or similar.
+
+        Note that the Switch's DNS server has to be set to this container *every* time you want to connect to your self-hosted server.
+
+        The --address args are just which DNS servers dnsmasq should use itself for looking things up.
+        --server args are your custom entries that won't use "real" DNS.
+
+        If you want ad-blocking too, try changing your --address DNS server IPs to be a Pihole.
     </Description>
     <Registry>https://registry.hub.docker.com/u/codesaru/dnsmasq</Registry>
     <Repository>codesaru/dnsmasq</Repository>
