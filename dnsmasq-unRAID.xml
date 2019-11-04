@@ -10,7 +10,7 @@
 
 
     <Name>dnsmasq</Name>
-    <Description>
+    <Overview>
         dnsmasq that's easy-ish to configure from the unRAID interface.
 
         Example use case is getting Minecraft on Nintendo Switch to connect to a self-hosted server.
@@ -24,11 +24,11 @@
 
         Note that the Switch's DNS server has to be set to this container *every* time you want to connect to your self-hosted server.
 
-        The --address args are just which DNS servers dnsmasq should use itself for looking things up.
-        --server args are your custom entries that won't use "real" DNS.
+        The --server args are just which DNS servers dnsmasq should use itself for looking things up.
+        --address arg(s) are your custom entries that won't use "real" DNS.
 
         If you want ad-blocking too, try changing your --address DNS server IPs to be a Pihole.
-    </Description>
+    </Overview>
     <Registry>https://registry.hub.docker.com/u/codesaru/dnsmasq</Registry>
     <Repository>codesaru/dnsmasq</Repository>
     <WebUI/>
@@ -37,7 +37,7 @@
     <Environment>
         <Variable>
             <Name>ADDITIONAL_PARAMS</Name>
-            <Value>--address=8.8.8.8 --address=8.8.4.4 --server=/example.com/192.168.0.42</Value>
+            <Value>--server=8.8.8.8 --server=8.8.4.4 --address=/example.com/192.168.0.42</Value>
         </Variable>
     </Environment>
 
@@ -46,12 +46,12 @@
         <Publish>
             <HostPort>53</HostPort>
             <ContainerPort>53</ContainerPort>
-            <Protocol>TCP</Protocol>
+            <Protocol>tcp</Protocol>
         </Publish>
         <Publish>
             <HostPort>53</HostPort>
             <ContainerPort>53</ContainerPort>
-            <Protocol>UDP</Protocol>
+            <Protocol>udp</Protocol>
         </Publish>
     </Networking>
 
