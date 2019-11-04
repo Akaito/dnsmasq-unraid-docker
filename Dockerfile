@@ -6,5 +6,5 @@ RUN addgroup -S dnsmasqdocker \
 USER dnsmasqdocker:dnsmasqdocker
 
 #ENTRYPOINT ["dnsmasq", "-k"]
-ENTRYPOINT exec dnsmasq -k $EXTRA_PARAMS
+ENTRYPOINT exec dnsmasq -k $ADDITIONAL_PARAMS
 

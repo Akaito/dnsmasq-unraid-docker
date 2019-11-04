@@ -36,7 +36,7 @@
 
     <Environment>
         <Variable>
-            <Name>EXTRA_PARAMS</Name>
+            <Name>ADDITIONAL_PARAMS</Name>
             <Value>--address=8.8.8.8 --address=8.8.4.4 --server=/example.com/192.168.0.42</Value>
         </Variable>
     </Environment>
@@ -46,17 +46,17 @@
         <Publish>
             <HostPort>53</HostPort>
             <ContainerPort>53</ContainerPort>
-            <Protocol>tcp</Protocol>
+            <Protocol>TCP</Protocol>
         </Publish>
         <Publish>
             <HostPort>53</HostPort>
             <ContainerPort>53</ContainerPort>
-            <Protocol>udp</Protocol>
+            <Protocol>UDP</Protocol>
         </Publish>
     </Networking>
 
     <Data/>
 
-    <ExtraParams></ExtraParams>
+    <ExtraParams>--cap-add NET_ADMIN</ExtraParams>
 </Container>
 
