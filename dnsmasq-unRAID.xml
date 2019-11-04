@@ -9,7 +9,7 @@
 
 
 
-    <Name>mydnsmasq</Name>
+    <Name>dnsmasq</Name>
     <Description>
         Trying out dnsmasq in Docker.
     </Description>
