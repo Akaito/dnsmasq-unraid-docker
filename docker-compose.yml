@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    dnsmasq:
+        container_name: dnsmasq
+        image: codesaru/dnsmasq:latest
+        ports:
+            - '53:53/tcp'
+            - '53:53/udp'
+        environment:
+            ADDITIONAL_PARAMS: '--server=8.8.8.8 --server=8.8.4.4 --address=/example.com/192.168.0.42'
+        dns:
+            - 127.0.0.1
+            - 1.1.1.1
+        cap_add:
+            - NET_ADMIN
+
