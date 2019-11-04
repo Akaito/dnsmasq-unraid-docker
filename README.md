@@ -8,6 +8,9 @@ To use in Unraid, be sure to:
 2. Set ADDITIONAL_PARAMS as desired.
    Each `--server=8.8.8.8` is a DNS server to use.
    Each `--address=/example.com/192.168.0.42` is a manual host -> IP to always use.
+3. Be sure to use a bridge network and give this container its own IP address.
+   So it's not in conflict with any other containers/services claiming port 53
+   on your host machine.
 
 
 Explanation
