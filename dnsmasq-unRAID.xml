@@ -22,6 +22,7 @@
         <Variable>
             <Name>EXTRA_PARAMS</Name>
             <Value>--address=8.8.8.8 --address=8.8.4.4 --server=/example.com/192.168.0.42</Value>
+        </Variable>
     </Environment>
 
     <Networking>
